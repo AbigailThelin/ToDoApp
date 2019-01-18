@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import { BtnViewStateReducer } from './reducers/ToDoReducer';
+import { ToDoReducer } from './reducers/ToDoReducer';
 
 export default combineReducers({
-    BtnViewStateReducer
+    ToDoReducer
 });
