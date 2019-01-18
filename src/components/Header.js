@@ -14,9 +14,7 @@ class Header extends Component {
     return (
       <div className="header-container">
         {this.props.modalStatus ? <Modal /> : null}
-        <span>To Do</span>
-        <span>Done</span>
-        <span>Calendar View</span>
+        <h1>To Do App</h1>
         <div onClick={() => this.props.setModal(this.props.modalStatus)}>ADD A TASK &#x2b;</div>
       </div>
     );

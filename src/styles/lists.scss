@@ -1,0 +1,29 @@
+.lists {
+    width: 100vw;
+    display: flex;
+}
+
+.not-completed {
+    width: 50vw;
+    height: 90vh;
+    overflow: scroll;
+    // background-color: pink;
+}
+
+.completed {
+    width: 50vw;
+    height: 90vh;
+    overflow: scroll;
+    // background-color: orange;
+}
+
+.paper {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
