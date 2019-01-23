@@ -34,7 +34,6 @@ export function ToDoReducer(state = initialState, action = {}) {
             console.log(state.toDoTasks.splice(x, 1))
             return{
                 ...state,
-                // toDoTasks: state.toDoTasks.splice(x, 1),
                 completedTasks: state.completedTasks.concat(action.payload)
             }
         case DELETE_TASK:
