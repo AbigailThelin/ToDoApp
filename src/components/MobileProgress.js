@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import '../styles/progress.scss';
 
 class MobileProgress extends Component {
     render(){
-        const {toDoTasks, completedTasks} = this.props;
+        const { toDoTasks } = this.props;
+        let finished = toDoTasks.filter(i => i.checked === true);
 
         return (
             <div className='progress-container'>
@@ -14,14 +16,18 @@ class MobileProgress extends Component {
                     <Link to='/' className='link'>&#x2190;</Link>
                 </div>
 
-                <div className='progress-bar'>
-                    this is the bar
+                <div className='progress-bar-container'>
+                    <CircularProgress
+                        className='progress-bar'
+                        variant="static"
+                        value={finished.length/toDoTasks.length*100}
+                    />
                 </div>
                 
                 <div className='progress-data'>
-                    <span>TASKS CREATED: {toDoTasks.length + completedTasks.length}</span>
-                    <span>TASKS COMPLETED: {completedTasks.length}</span>
-                    <span>PROGRESS: {completedTasks.length / toDoTasks.length}</span>
+                    <span>TASKS CREATED: {toDoTasks.length}</span>
+                    <span>TASKS COMPLETED: {finished.length}</span>
+                    <span>PROGRESS: {finished.length/toDoTasks.length}</span>
                 </div>
             </div>
         );
@@ -31,7 +37,6 @@ class MobileProgress extends Component {
 const mapStateToProps = state => {
     return {
       toDoTasks: state.ToDoReducer.toDoTasks,
-      completedTasks: state.ToDoReducer.completedTasks
     };
   };
   
@@ -40,8 +45,6 @@ const mapStateToProps = state => {
   };
   
   const mapDispatchToProps = {
-    // addToCompleted,
-    // deleteTask
   };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MobileProgress);

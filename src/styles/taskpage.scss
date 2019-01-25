@@ -1,0 +1,67 @@
+.task-page-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: scroll;
+    background-color:  #E1E5EF;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-header {
+    text-decoration: none;
+    position: fixed;
+    top: 0;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 2rem;
+}
+
+.task-title {
+    color: #3d4447;
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+.subtask-container {
+    margin-top: 30px;
+    height: 80vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    overflow: scroll;
+}
+
+.subtasks {
+    width: 80vw;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.add-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+
+    span {
+        font-size: 3rem;
+        color: #b7bfc2;
+    }
+}
+
+.subtask-title {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.delete-subtask {
+    width: 20%;
+    margin: auto;
+}

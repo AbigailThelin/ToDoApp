@@ -1,47 +1,74 @@
 .mobile-container {
     background-color:  #E1E5EF;
-    height: 100vh;
     width: 100vw;
-}
-
-.mobile-header {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 10vh;
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    padding-left: 30px;
+    flex-direction: column;
 }
 
-.material-icons.md-48 { font-size: 48px; }
-
-.mobile-footer {
+.add-overarching-container {
     width: 100vw;
     height: 20vh;
-    position: absolute;
-    bottom: 0px;
-    background-color: white;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.link {
-    text-decoration: none;
-    color: black;
-    font-size: 1.5rem;
-}
-
-.mobile-paper {
-    width: 80vw;
-    height: 10vh;
     padding: 10px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
 }
 
+.submit{
+    font-size: 1rem;
+    width: 80vw;
+    height: 30px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #4527a0
+    ;
+    color: white;
+
+}
+
+.progress-icon {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+}
+
+.list-type {
+    width: 90%;
+    font-size: 2rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.overarching-paper {
+    margin-top: 30px;
+    width: 60vw;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+.overarching-title {
+    font-size: 2rem;
+    color: #484848;
+    margin-left: 30px;
+}
+
+.amount {
+    font-size: 1rem;
+    color: #989898;
+    margin-left: 30px;
+}
+
+.tasks-container {
+    height: 75vh;
+    padding-bottom: 20px;
+    overflow: scroll;
+}

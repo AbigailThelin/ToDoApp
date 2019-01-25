@@ -1,16 +1,15 @@
 import React from 'react'
-import {Switch, Route} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
-import Home from './components/Home';
-import MobileProgress from './components/MobileProgress'
-import MobileAddTask from './components/MobileAddTask';
+import Mobile from './components/Mobile';
+import MobileProgress from './components/MobileProgress';
+import TaskPage from './components/TaskPage';
 
 
 export default (
     <Switch>
-        <Route component={Home} path="/" exact/>
+        <Route component={Mobile} path="/" exact/>
         <Route component={MobileProgress} path="/progress" />
-        <Route component={MobileAddTask} path="/add" />
-        {/* <Route component={MobileCompleted} path="/completed" /> */}
+        <Route component={TaskPage} path="/overarching-task/:id"/>
     </Switch>
 )

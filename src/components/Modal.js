@@ -15,36 +15,30 @@ class Modal extends Component {
 
     submit = () => {
         let title = document.getElementById('task-title').value;
-        let date = document.getElementById('date').value;
 
-        this.props.addTask({title, date});
-        this.props.setModal(this.props.modalStatus);
+        if(title === ''){
+            alert('needs a title')
+        } else{
+            this.props.addTask({title, overarching: this.props.overarching, checked: false});
+            this.props.setModal(this.props.modalStatus);
+        }
     }
 
     render() {
         return (
-        <div className="modal-container">
-            <Paper className='modal' elevation={1}>
-                <span>Add Your Task</span>
-                <TextField
-                    id="task-title"
-                    label="Task Title"
-                    className="task-name"
-                />
-                <TextField
-                    id="date"
-                    label="Task Date"
-                    type="date"
-                    defaultValue="2017-05-24"
-                    InputLabelProps={{
-                    shrink: true,
-                    }}
-                />
-                <Button variant="contained" onClick={this.submit}>
-                    Add Task
-                </Button>
-            </Paper>
-        </div>
+            <div className="modal-container">
+                <Paper className='modal' elevation={1}>
+                    <span>Add Your Task</span>
+                    <TextField
+                        id="task-title"
+                        label="Task Title"
+                        className="task-name"
+                    />
+                    <Button variant="contained" onClick={this.submit}>
+                        Add Task
+                    </Button>
+                </Paper>
+            </div>
         );
     }
 }
@@ -52,6 +46,7 @@ class Modal extends Component {
 
 const mapStateToProps = state => {
   return {
+    overarchingTickets: state.ToDoReducer.overarchingGroups,
     modalStatus: state.ToDoReducer.modalStatus
   };
 };

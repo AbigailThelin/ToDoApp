@@ -3,8 +3,16 @@ export const SET_MODAL = 'SET_MODAL';
 export const ADD_TASK = 'ADD_TASK';
 export const ADD_TO_COMPLETED = 'ADD_TO_COMPLETED';
 export const DELETE_TASK = 'DELETE_TASK';
+export const ADD_OVERARCHING = 'ADD_OVERARCHING';
 
 // actions
+export function addOverarching (overarching) {
+    return {
+        type: ADD_OVERARCHING,
+        payload: overarching
+    }
+}
+
 export function getAllTasks() {
     return {
         type: GET_ALL_TASKS
@@ -19,7 +27,6 @@ export function setModal(modalStatus) {
 }
 
 export function addTask (task) {
-    console.log('task', task);
     return {
         payload: task,
         type: ADD_TASK
